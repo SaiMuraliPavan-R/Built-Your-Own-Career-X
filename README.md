@@ -47,7 +47,8 @@ Demonstrated ability to engineer high-throughput, mission-critical systems:
 
 ### 📞 Connect with Me
 
-* **LinkedIn:** rsai65
+* **LinkedIn:** [rsai65](https://www.linkedin.com/in/rsai65/)
 * **Email:** rsai651@gmail.com
+* **Mobile:** +91-9581389147
 
 > *Explore the repositories below to see my work and the "X" direction in action.*
