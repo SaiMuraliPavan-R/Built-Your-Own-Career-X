@@ -1,0 +1,5 @@
+functions-framework==3.5.0
+google-cloud-aiplatform==1.60.0
+google-api-python-client==2.118.0
+requests==2.31.0
+Pillow==10.2.0

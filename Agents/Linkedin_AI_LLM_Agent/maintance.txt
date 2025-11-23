@@ -1,0 +1,78 @@
+cat <<EOF > maintenance_guide.txt
+===================================================================
+   PHASE 5: MAINTENANCE PROTOCOL (THE 60-DAY RULE)
+   Project: Serverless LinkedIn AI Agent
+===================================================================
+
+[ CRITICAL WARNING ]
+Your LinkedIn Access Token expires every 60 DAYS.
+If you do not update it, the Agent will fail with "401 Unauthorized" 
+around January 20, 2026.
+
+[ MAINTENANCE SCHEDULE ]
+Recommended Frequency: Every 55 Days
+Next Due Date: Set a calendar reminder now.
+
+-------------------------------------------------------------------
+STEP 1: GENERATE NEW TOKEN
+-------------------------------------------------------------------
+1. Go to the LinkedIn OAuth Tool:
+   https://www.linkedin.com/developers/tools/oauth/token-generator
+
+2. Select your App ("MyPersonalAgent").
+
+3. Ensure the following SCOPES are checked:
+   [x] w_member_social
+   [x] openid
+   [x] profile
+   [x] email
+
+4. Click "Request Access Token".
+5. Copy the long Access Token (starts with "AQU...").
+
+-------------------------------------------------------------------
+STEP 2: UPDATE THE CODE
+-------------------------------------------------------------------
+1. Open Google Cloud Console > Cloud Shell (Terminal).
+
+2. Open your python script:
+   nano main.py
+
+3. Scroll down to the ### CONFIGURATION SECTION ###.
+
+4. Delete the old token inside the quotes and paste the NEW one.
+   Example:
+   raw_token = "PASTE_NEW_LONG_TOKEN_HERE"
+
+5. Save and Exit:
+   Press Ctrl+X, then Y, then Enter.
+
+-------------------------------------------------------------------
+STEP 3: REDEPLOY TO PRODUCTION
+-------------------------------------------------------------------
+Run this exact command in Cloud Shell to update the server:
+
+gcloud functions deploy linkedin-agent \\
+  --gen2 \\
+  --runtime=python311 \\
+  --region=us-central1 \\
+  --source=. \\
+  --entry-point=run_agent \\
+  --trigger-http \\
+  --memory=2GiB \\
+  --timeout=120s \\
+  --allow-unauthenticated
+
+-------------------------------------------------------------------
+STEP 4: VERIFY
+-------------------------------------------------------------------
+Run the curl command to make sure it works with the new key:
+
+curl [YOUR_FUNCTION_URL]
+
+(You can find your URL by running: gcloud functions describe linkedin-agent --region=us-central1 --format="value(serviceConfig.uri)")
+
+===================================================================
+   END OF MAINTENANCE PROCEDURE
+===================================================================
+EOF
