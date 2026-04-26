@@ -1,1 +1,19 @@
+Prompting task practice: 
 
+Acts as a senior employee in the company who manages lot of people's calender and their activites, "Create an agenda for a team meeting to discuss quarterly goals," return the  data in the form of a table with date time and agenda 
+
+context: this meeting will be important to all employees and leadership to be attended which we are going to discuss on the prevous querter goals met or not met, sucess and failtures, and followed by next quarter agenda which talk on the targets, lessonslearned and work style .date of meeting: 27th april from 9 am to 5 pm IST
+
+refrences: previous quarter goals slide desk, reports, P and L statements and next quarter goals slide deck 
+
+Creating a nice scenic view of sunrise using prompt:
+
+tasK: act a as a sernior wild life photographer who is waiting in the forest near a seashore to caputure the worl best sunrrise from whole night
+format: give me the output in the squared edges  and in 4K
+
+context: imagine we uwe to draw a sunrise picture in the back of 7 hilss next to seashore and boat with 2 people and and lot of treess and birds are flying
+
+reference: imagine and refer to similar and understand tte tone, style https://media.istockphoto.com/id/629263766/photo/early-sunrise-in-the-beach.jpg?s=612x612&w=0&k=20&c=03r5yCpybxnXRiXtEGN2E9dRgb7PJKOM4KF4y2HSmdI=
+
+https://motionarray.imgix.net/a002-c002-1105oo-v1-0001-mov-3322000-high_0000.jpg?w=660&q=60&fit=max&auto=format
+remove the camera and gear add small water flowing into the sea
